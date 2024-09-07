@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/exit_btn.gd" type="Script" id=1]
+[ext_resource path="res://scripts/new_game_btn.gd" type="Script" id=2]
+
+[node name="Node2D" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -300.0
+margin_bottom = 300.0
+
+[node name="Node" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.5
+margin_top = -45.0
+margin_right = 243.5
+margin_bottom = 45.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node"]
+margin_right = 487.0
+margin_bottom = 90.0
+
+[node name="new_game_btn" type="Button" parent="Node/VBoxContainer"]
+margin_right = 487.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 52, 15 )
+text = "Novo Jogo"
+script = ExtResource( 2 )
+
+[node name="credits" type="Button" parent="Node/VBoxContainer"]
+margin_top = 24.0
+margin_right = 487.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 52, 15 )
+text = "Créditos"
+
+[node name="exit_btn" type="Button" parent="Node/VBoxContainer"]
+margin_top = 48.0
+margin_right = 487.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 52, 15 )
+text = "Sair"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Node/VBoxContainer/new_game_btn" to="Node/VBoxContainer/new_game_btn" method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="Node/VBoxContainer/exit_btn" to="Node/VBoxContainer/exit_btn" method="_on_exit_btn_pressed"]

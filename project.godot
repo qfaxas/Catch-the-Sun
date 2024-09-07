@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Catch_the_sun"
-run/main_scene="res://cenas/Fase1.tscn"
+run/main_scene="res://Menu.tscn"
 config/icon="res://inutil/icon.png"
 
 [autoload]
