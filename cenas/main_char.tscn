@@ -51,7 +51,7 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "andar",
-"speed": 13.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -83,6 +83,8 @@ position = Vector2( 1.19209e-07, 0 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "andar"
+frame = 3
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4, 3 )
