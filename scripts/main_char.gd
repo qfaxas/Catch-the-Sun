@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 var speed = 800
 var queda = gravity * 1.3
 onready var animacao = $AnimatedSprite
+onready var ciclos = $CanvasLayer/ciclos
 onready var timer = $Timer
 var lento = 0
 var normal = 1
@@ -18,7 +19,7 @@ var rapido = 0
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	ciclos.animation = "normal"
 	
 func gravidade(velocity: Vector2):
 	if velocity.y < 0:
@@ -84,12 +85,15 @@ func _physics_process(delta):
 		if normal == 1:
 			normal = 0
 			rapido = 1
+			ciclos.animation = "fast"
 		elif rapido == 1:
 			rapido = 0 
 			lento = 1
+			ciclos.animation = "slow"
 		elif lento == 1:
 			lento = 0
 			normal = 1
+			ciclos.animation = "normal"
 
 	move_and_slide(velocity, FLOOR)
 
