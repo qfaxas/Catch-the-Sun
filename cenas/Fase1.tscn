@@ -1,18 +1,55 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://cenas/notsofakefrieren.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/main_char.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/bg_01.png" type="Texture" id=4]
 [ext_resource path="res://cenas/bloco_normal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/background/azul.png" type="Texture" id=6]
+[ext_resource path="res://assets/background/nu.png" type="Texture" id=7]
+[ext_resource path="res://assets/background/vem.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/cume.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/grass.png" type="Texture" id=10]
 
 [node name="Fase1" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource( 10 )
+
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -581.0
-margin_top = -9148.0
-margin_right = 1659.0
-margin_bottom = 639.0
+margin_left = 3818.0
+margin_top = 1319.0
+margin_right = 4801.0
+margin_bottom = 1695.0
 texture = ExtResource( 4 )
 stretch_mode = 2
 
@@ -31,8 +68,8 @@ position = Vector2( 540, 573 )
 [node name="floor3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1289, 573 )
 
-[node name="bloco_normal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 910, 475 )
-
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 709, 529 )
+position = Vector2( 318, 526 )
+
+[node name="bloco_normal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1222, 476 )

@@ -14,6 +14,10 @@ config/name="Catch_the_sun"
 run/main_scene="res://cenas/Fase1.tscn"
 config/icon="res://inutil/icon.png"
 
+[autoload]
+
+Autoload="*res://Autoload.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
