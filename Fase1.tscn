@@ -9,15 +9,15 @@ extents = Vector2( 385, 36.5 )
 [node name="Fase1" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( -26, -179 )
+position = Vector2( 168, -227 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 457, 531 )
+position = Vector2( 457, 555 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 477, 536 )
+position = Vector2( 477, 555 )
 scale = Vector2( 1, 0.088 )
 texture = ExtResource( 1 )
