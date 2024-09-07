@@ -45,7 +45,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 35, 44.75 )
+extents = Vector2( 11, 13.875 )
 
 [node name="notfrieren" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -59,13 +59,13 @@ frames = SubResource( 3 )
 animation = "fast"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 3.57628e-07, -2.38419e-07 )
-scale = Vector2( 0.092, 0.101 )
+position = Vector2( 1.19209e-07, 0 )
+scale = Vector2( 0.029, 0.0315 )
 frames = SubResource( 1 )
 animation = "andar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3.75 )
+position = Vector2( 0, 0.875 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -73,8 +73,10 @@ wait_time = 0.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 smoothing_speed = 32.0
+offset_v = -1.0
 __meta__ = {
 "_edit_lock_": true
 }
