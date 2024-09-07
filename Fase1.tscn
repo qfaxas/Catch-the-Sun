@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/notfrieren.png" type="Texture" id=1]
 [ext_resource path="res://cenas/main_char.tscn" type="PackedScene" id=2]
+[ext_resource path="res://notsofakefrieren.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 572.5, 36.5 )
@@ -9,7 +10,10 @@ extents = Vector2( 572.5, 36.5 )
 [node name="Fase1" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 168, -227 )
+position = Vector2( 157, -219 )
+
+[node name="notsofakefrieren" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( -35, 671 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
