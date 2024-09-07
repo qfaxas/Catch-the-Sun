@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://jw18pdaoif75"]
 
-[ext_resource type="Script" path="res://MainMenu.cs" id="1_na13c"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_kjp12"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_na13c")
+script = ExtResource("1_kjp12")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -34,3 +34,5 @@ layout_mode = 2
 
 [node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
