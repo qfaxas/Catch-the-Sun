@@ -129,9 +129,6 @@ stretch_mode = 2
 [node name="notsofakefrieren" parent="." instance=ExtResource( 1 )]
 position = Vector2( -731, 54 )
 
-[node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2586, 62 )
-
 [node name="bloco_normal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2586, -24 )
 
@@ -168,6 +165,9 @@ margin_top = -88.0
 margin_right = 2843.0
 margin_bottom = 113.0
 text = "Eu posso pisar nas folhas se for rápida o suficiente..."
+
+[node name="notfrieren" parent="." instance=ExtResource( 3 )]
+position = Vector2( 497, -34 )
 
 [connection signal="body_entered" from="pensamento" to="." method="_on_pensamento_body_entered"]
 [connection signal="body_exited" from="pensamento" to="." method="_on_pensamento_body_exited"]
