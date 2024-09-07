@@ -31,4 +31,4 @@ position = Vector2( 540, 573 )
 position = Vector2( 1289, 573 )
 
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 458, 117 )
+position = Vector2( 513, -30 )

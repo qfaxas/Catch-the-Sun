@@ -1,12 +1,14 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO 
-const gravity = 45
-var speed = 800
+
+const gravity = 1500
 const jump = -1000
 const dashx = 5
 const dashy = 4.5
 const FLOOR = Vector2(0,-1)
+var velocity = Vector2.ZERO 
+var speed = 800
+var queda = gravity * 1.3
 onready var animated_sprite = $AnimatedSprite
 onready var timer = $Timer
 
@@ -14,8 +16,12 @@ onready var timer = $Timer
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 	
+func gravidade(velocity: Vector2):
+	if velocity.y < 0:
+		return gravity
+	return queda
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -58,7 +64,8 @@ func _physics_process(delta):
 		velocity.y = jump
 		
 	#gravity
-	velocity.y += gravity
+	if not is_on_floor():
+		velocity.y += gravidade(velocity) * delta
 
 	move_and_slide(velocity, FLOOR)
 
