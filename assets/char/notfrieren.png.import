@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grass.png-5b525b87db3ffff182fad7e5b0a86629.stex"
+path="res://.import/notfrieren.png-2282dda07a1f08a48f9de68eeec29646.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/grass.png"
-dest_files=[ "res://.import/grass.png-5b525b87db3ffff182fad7e5b0a86629.stex" ]
+source_file="res://assets/char/notfrieren.png"
+dest_files=[ "res://.import/notfrieren.png-2282dda07a1f08a48f9de68eeec29646.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

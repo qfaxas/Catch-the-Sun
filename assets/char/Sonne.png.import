@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/notfrieren.png-f0170cca54f7a5bf1c7a36a739b8bbc7.stex"
+path="res://.import/Sonne.png-6735ef2eaec53308e314cf4e755f2d48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/notfrieren.png"
-dest_files=[ "res://.import/notfrieren.png-f0170cca54f7a5bf1c7a36a739b8bbc7.stex" ]
+source_file="res://assets/char/Sonne.png"
+dest_files=[ "res://.import/Sonne.png-6735ef2eaec53308e314cf4e755f2d48.stex" ]
 
 [params]
 

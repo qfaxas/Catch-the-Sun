@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/notfrieren_down.png-83c3c4710080b28031ca95c5d8626fb1.stex"
+path="res://.import/notfrieren_down.png-4e75f107a4e8fd1afc1e462b5dd9e656.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/notfrieren_down.png"
-dest_files=[ "res://.import/notfrieren_down.png-83c3c4710080b28031ca95c5d8626fb1.stex" ]
+source_file="res://assets/char/notfrieren_down.png"
+dest_files=[ "res://.import/notfrieren_down.png-4e75f107a4e8fd1afc1e462b5dd9e656.stex" ]
 
 [params]
 
