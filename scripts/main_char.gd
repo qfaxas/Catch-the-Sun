@@ -10,9 +10,11 @@ var velocity = Vector2.ZERO
 var speed = 400
 var queda = gravity * 1.7
 var jump_buffer = 0.1
+var dashcd :bool = true
 onready var animacao = $AnimatedSprite
 onready var ciclos = $CanvasLayer/MarginContainer/ciclos
 onready var timer = $Timer
+onready var dash_cooldown = $dash_cooldown
 
 	
 # Called when the node enters the scene tree for the first time.
@@ -28,37 +30,45 @@ func gravidade(velocity: Vector2):
 func _physics_process(delta):
 
 	#caminhar no elemento
+	if velocity.x == 0 and velocity.y == 0:
+		animacao.animation = "idle"
 	if Input.is_action_pressed("left"):
 		animacao.animation = "andar"
 		animacao.flip_h = true
 		velocity.x = -speed
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") and dashcd:
 			speed = 400
 			speed *= dashx
 			timer.start()
+			dash_cooldown.start()
+			dashcd = false
 	elif Input.is_action_pressed("right"):
 		animacao.animation = "andar"
 		animacao.flip_h = false
 		velocity.x = speed
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") and dashcd:
 			speed = 400
 			speed *= dashx
 			timer.start()
+			dash_cooldown.start()
+			dashcd = false
 	else:
 		velocity.x = 0
 	
 	#testes pra dash 8pad
 	if Input.is_action_pressed("up"):
-			animacao.animation = "subir"
-			if Input.is_action_just_pressed("dash"):
+			if Input.is_action_just_pressed("dash") and dashcd:
 				velocity.y = -350
 				timer.start()
+				dash_cooldown.start()
+				dashcd = false
 
 	if Input.is_action_pressed("down"):
-			animacao.animation = "descer"
-			if Input.is_action_just_pressed("dash"):
+			if Input.is_action_just_pressed("dash") and dashcd:
 					velocity.y = 350
 					timer.start()
+					dash_cooldown.start()
+					dashcd = false
 	
 	#pulo	
 	if Input.is_action_just_pressed("jump"):
@@ -90,3 +100,7 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	speed = 400
+
+
+func _on_dash_cooldown_timeout():
+	dashcd = true
