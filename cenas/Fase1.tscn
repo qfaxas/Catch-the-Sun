@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://cenas/notsofakefrieren.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/main_char.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/bg_01.png" type="Texture" id=4]
+[ext_resource path="res://cenas/bloco_normal.tscn" type="PackedScene" id=5]
 
 [node name="Fase1" type="Node2D"]
 
@@ -30,5 +31,8 @@ position = Vector2( 540, 573 )
 [node name="floor3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1289, 573 )
 
+[node name="bloco_normal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 910, 475 )
+
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 513, -30 )
+position = Vector2( 709, 529 )

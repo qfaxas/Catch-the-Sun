@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/bloco2.png" type="Texture" id=1]
+[ext_resource path="res://assets/bloco.png" type="Texture" id=2]
+[ext_resource path="res://scripts/bloco_normal.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 305, 176 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 84.5, 98.5 )
+
+[node name="bloco_normal" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 1 )
+shape = SubResource( 3 )
+
+[node name="bloco" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="AnimatedSprite" parent="bloco"]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloco"]
+position = Vector2( -2.5, 1.5 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_bloco_normal_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_bloco_normal_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_bloco_normal_body_exited"]
