@@ -5,7 +5,8 @@ const gravity = 1000
 const speed = 800
 const jump = -1000
 const FLOOR = Vector2(0,-1)
-onready var notfrieren = $notfrieren
+onready var notfrieren = $"."
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,13 +17,19 @@ func _ready():
 func _physics_process(delta):
 
 	#caminhar no elemento
-	if Input.is_action_just_pressed("left"):
+	if Input.is_action_pressed("left"):
 		velocity.x = -speed
-	elif Input.is_action_just_pressed("right"):
+	elif Input.is_action_pressed("right"):
 		velocity.x = speed
 	else:
 		return 0
+	if Input.is_action_just_pressed("jump"):
+		
+		velocity.y = jump	
 		
 	#gravity
+	
+	velocity.y -= gravity
 
 	move_and_slide(velocity, FLOOR)
+
