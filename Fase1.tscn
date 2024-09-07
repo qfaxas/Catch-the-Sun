@@ -4,7 +4,7 @@
 [ext_resource path="res://cenas/main_char.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 385, 36.5 )
+extents = Vector2( 572.5, 36.5 )
 
 [node name="Fase1" type="Node2D"]
 
@@ -14,10 +14,15 @@ position = Vector2( 168, -227 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 457, 555 )
+position = Vector2( 541.5, 555 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 477, 555 )
-scale = Vector2( 1, 0.088 )
+position = Vector2( 512.5, 555 )
+scale = Vector2( 1.427, 0.088 )
 texture = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="Timer" to="Node2D" method="_on_Timer_timeout"]
