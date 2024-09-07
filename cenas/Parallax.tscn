@@ -58,6 +58,7 @@ texture = ExtResource( 5 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_mirroring = Vector2( 1024, 0 )

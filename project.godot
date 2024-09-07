@@ -18,6 +18,11 @@ config/icon="res://inutil/icon.png"
 
 Autoload="*res://Autoload.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

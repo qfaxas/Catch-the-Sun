@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://cenas/notsofakefrieren.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/folha1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://cenas/Parallax.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/grid.png" type="Texture" id=7]
 [ext_resource path="res://scripts/Fase1.gd" type="Script" id=8]
+[ext_resource path="res://assets/DeliusSwashCaps-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -106,6 +107,10 @@ colors = PoolColorArray( 0.623883, 0.91748, 0.383478, 1, 0.369002, 0.697222, 0.1
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 218.25, 88.5625 )
 
+[sub_resource type="DynamicFont" id=11]
+use_filter = true
+font_data = ExtResource( 9 )
+
 [node name="Fase1" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -156,14 +161,15 @@ color_ramp = SubResource( 9 )
 [node name="pensamento" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pensamento"]
-position = Vector2( 2581.25, 12.5625 )
+position = Vector2( 2584, 4 )
 shape = SubResource( 10 )
 
 [node name="Label" type="Label" parent="pensamento"]
-margin_left = 2339.0
-margin_top = -88.0
-margin_right = 2843.0
-margin_bottom = 113.0
+margin_left = 2427.0
+margin_top = -23.0
+margin_right = 2798.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 11 )
 text = "Eu posso pisar nas folhas se for rápida o suficiente..."
 
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
