@@ -2,8 +2,6 @@
 
 [ext_resource path="res://scripts/main_char.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/Sonne.png" type="Texture" id=2]
-[ext_resource path="res://assets/char/notfrieren_up.png" type="Texture" id=3]
-[ext_resource path="res://assets/char/notfrieren_down.png" type="Texture" id=4]
 [ext_resource path="res://assets/lento.png" type="Texture" id=5]
 [ext_resource path="res://assets/rapido.png" type="Texture" id=6]
 [ext_resource path="res://assets/normal.png" type="Texture" id=7]
@@ -46,6 +44,10 @@ region = Rect2( 0, 480, 160, 160 )
 atlas = ExtResource( 2 )
 region = Rect2( 0, 640, 160, 160 )
 
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 160, 160, 160 )
+
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
 region = Rect2( 160, 0, 160, 160 )
@@ -61,6 +63,10 @@ region = Rect2( 160, 320, 160, 160 )
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 160, 480, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
@@ -85,9 +91,9 @@ animations = [ {
 "name": "andar",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
-"name": "descer",
+"name": "cair",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
@@ -95,14 +101,19 @@ animations = [ {
 "name": "idle",
 "speed": 2.5
 }, {
-"frames": [ ExtResource( 3 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "pular",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "subir",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 12, 29 )
+extents = Vector2( 16.25, 39.75 )
 
 [node name="notfrieren" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -126,14 +137,13 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.19209e-07, 0 )
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 1 )
-animation = "idle"
-frame = 1
+animation = "pular"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -4, 3 )
+position = Vector2( -5.75, 4.75 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -30,7 +30,6 @@ shape = SubResource( 3 )
 position = Vector2( -1.90735e-06, 3.8147e-06 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="colidir" type="CollisionShape2D" parent="bloco"]

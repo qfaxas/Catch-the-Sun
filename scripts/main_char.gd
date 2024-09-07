@@ -29,12 +29,24 @@ func gravidade(velocity: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
+	#animacoes
+	if is_on_floor():
+		if velocity.x == 0:
+			animacao.animation = "idle"
+		elif velocity.x > 0:
+			animacao.flip_h = false
+			animacao.animation = "andar"
+		else:
+			animacao.flip_h = true
+			animacao.animation = "andar"
+	elif velocity.y < 0:
+		animacao.animation = "pular"
+	else:
+		animacao.animation = "cair"
+	
+	
 	#caminhar no elemento
-	if velocity.x == 0 and velocity.y == 0:
-		animacao.animation = "idle"
 	if Input.is_action_pressed("left"):
-		animacao.animation = "andar"
-		animacao.flip_h = true
 		velocity.x = -speed
 		if Input.is_action_just_pressed("dash") and dashcd:
 			speed = 400
@@ -43,8 +55,6 @@ func _physics_process(delta):
 			dash_cooldown.start()
 			dashcd = false
 	elif Input.is_action_pressed("right"):
-		animacao.animation = "andar"
-		animacao.flip_h = false
 		velocity.x = speed
 		if Input.is_action_just_pressed("dash") and dashcd:
 			speed = 400
