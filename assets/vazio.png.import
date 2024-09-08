@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meiabomba.png-deb9906815c2e7218e8f788bd6115561.stex"
+path="res://.import/vazio.png-53bd21490c69c750adc7297f89f2b9dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meiabomba.png"
-dest_files=[ "res://.import/meiabomba.png-deb9906815c2e7218e8f788bd6115561.stex" ]
+source_file="res://assets/vazio.png"
+dest_files=[ "res://.import/vazio.png-53bd21490c69c750adc7297f89f2b9dd.stex" ]
 
 [params]
 

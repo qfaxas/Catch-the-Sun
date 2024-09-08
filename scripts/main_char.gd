@@ -18,6 +18,7 @@ onready var dash_cooldown = $dash_cooldown
 onready var texto = $texto
 onready var panel = $CanvasLayer/MarginContainer/Panel
 onready var energia = $CanvasLayer/MarginContainer/energia
+onready var panel_2 = $CanvasLayer/MarginContainer/Panel2
 
 
 	
@@ -108,12 +109,15 @@ func _physics_process(delta):
 	
 	#ciclar velocidade
 	if Input.is_action_just_pressed("vel"):
-		if Autoload.poder == 0:
+		if Autoload.poder <= 0:
 			if Autoload.velocidade == 1:
 				panel.show()
 				texto.start()
-				Autoload.velocidade -= 1
+				Autoload.velocidade = 0
 				ciclos.animation = "slow"
+			else:
+				Autoload.velocidade = 1
+				ciclos.animation = "normal"
 		elif Autoload.velocidade == 1:
 			Autoload.velocidade += 1
 			ciclos.animation = "fast"
@@ -123,7 +127,6 @@ func _physics_process(delta):
 		elif Autoload.velocidade == 0:
 			Autoload.velocidade += 1
 			ciclos.animation = "normal"
-	print(Autoload.poder)
 	
 	#ver energia
 	if Autoload.poder == 3:
@@ -132,6 +135,13 @@ func _physics_process(delta):
 		energia.animation = "medio"
 	elif Autoload.poder == 1:
 		energia.animation = "pouco"
+	else:
+		energia.animation = "vazio"
+		ciclos.animation = "normal"
+		Autoload.velocidade = 1
+		panel_2.show()
+		texto.start()
+		
 
 #-----------------------------------------------------------------
 
@@ -147,3 +157,4 @@ func _on_dash_cooldown_timeout():
 
 func _on_texto_timeout():
 	panel.hide()
+	panel_2.hide()
