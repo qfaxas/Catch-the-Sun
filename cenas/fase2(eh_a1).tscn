@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://cenas/parallex.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilenovo.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://cenas/sol.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/DeliusSwashCaps-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/background/atras.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 11 )
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -76,7 +79,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 0/z_index = 0
 
 [sub_resource type="SegmentShape2D" id=6]
-a = Vector2( 6346, -40 )
+a = Vector2( 6372, 123 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 175.5, 107.5 )
@@ -85,9 +88,12 @@ extents = Vector2( 175.5, 107.5 )
 font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 188.25, 107.5 )
+extents = Vector2( 253.125, 107.5 )
 
 [sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 11 )
 
 [node name="fase2(eh_a1)" type="Node2D"]
@@ -95,25 +101,43 @@ script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 2214.0
-margin_top = 306.0
-margin_right = 6400.0
+margin_top = 254.0
+margin_right = 8160.0
 margin_bottom = 1006.0
 texture = ExtResource( 12 )
 stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = -1554.0
-margin_top = -868.0
-margin_right = 7014.0
-margin_bottom = -36.0
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = -1078.0
+margin_top = -575.0
+margin_right = -511.0
+margin_bottom = 125.0
 texture = ExtResource( 12 )
 stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -1537.0
+margin_top = -865.0
+margin_right = 7031.0
+margin_bottom = -253.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+margin_left = -493.0
+margin_top = 76.0
+margin_right = 376.0
+margin_bottom = 364.0
+custom_fonts/font = SubResource( 11 )
+text = "Parece que caí nessa caverna, longe da minha amada luz do sol... 
+Posso descansar um pouco aqui se me concentrar em ficar mais lenta, 
+mas acho que vou precisar de muita energia para sair daqui"
 
 [node name="parallex" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1313, 158 )
 
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 282, 200 )
+position = Vector2( -195, 194 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -178,6 +202,11 @@ shape = SubResource( 6 )
 position = Vector2( 4258, 88 )
 scale = Vector2( 1, 1.5 )
 
+[node name="sol2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -290, 137 )
+rotation = -0.436332
+scale = Vector2( 1, 2 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -200,14 +229,13 @@ custom_fonts/font = SubResource( 8 )
 text = "Preciso andar com cuidado para não me machucar..."
 
 [node name="cara" type="Area2D" parent="."]
-position = Vector2( 2467, 163 )
+position = Vector2( 2306, 170 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cara"]
-position = Vector2( -1, 6 )
+position = Vector2( 16.875, -21 )
 shape = SubResource( 9 )
 
 [node name="Label" type="Label" parent="cara"]
-visible = false
 margin_left = -143.0
 margin_top = -81.0
 margin_right = 142.0
@@ -232,6 +260,15 @@ margin_bottom = -36.0
 custom_fonts/font = SubResource( 10 )
 text = "Posso descansar um pouco na luz, o caminho
            à frente parece perigoso "
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 336.0
+margin_top = 73.0
+margin_right = 706.0
+margin_bottom = 166.0
+custom_fonts/font = SubResource( 12 )
+text = "Aperte [E]/[X] para mudar sua velocidade,
+ e [SHIFT]/[B] para avançar!"
 
 [connection signal="body_entered" from="espinhos" to="." method="_on_espinhos_body_entered"]
 [connection signal="body_entered" from="espinhos3" to="." method="_on_espinhos3_body_entered"]

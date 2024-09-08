@@ -72,6 +72,7 @@ func _physics_process(delta):
 			speed *= dashx
 			timer.start()
 			dash_cooldown.start()
+			Autoload.poder -= 1
 			dashcd = false
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
@@ -84,6 +85,7 @@ func _physics_process(delta):
 			speed *= dashx
 			timer.start()
 			dash_cooldown.start()
+			Autoload.poder -= 1
 			dashcd = false
 	else:
 		velocity.x = 0
@@ -149,7 +151,11 @@ func _physics_process(delta):
 	else:
 		energia.animation = "vazio"
 		Autoload.tempoder.stop()
-		
+	
+	if Autoload.poder <= 0:
+		Autoload.poder = 0
+		dash_cooldown.start()
+	
 	#teste/apagar dps
 	#print("velocidade = ", Autoload.velocidade, "\npoder = ", Autoload.poder)
 	
