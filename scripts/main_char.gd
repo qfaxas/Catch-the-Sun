@@ -49,6 +49,14 @@ func _physics_process(delta):
 	else:
 		animacao.animation = "cair"
 	
+	#de ciclos
+	if Autoload.velocidade == 1:
+		ciclos.animation = "normal"
+		
+	#TODO resolver isso aq	
+	if Autoload.poder == 0 and Autoload.velocidade == 2:
+			panel_2.show()
+			texto.start()
 	
 	#caminhar no elemento
 	if Input.is_action_pressed("left"):
@@ -109,7 +117,7 @@ func _physics_process(delta):
 	
 	#ciclar velocidade
 	if Input.is_action_just_pressed("vel"):
-		if Autoload.poder <= 0:
+		if Autoload.poder == 0:
 			if Autoload.velocidade == 1:
 				panel.show()
 				texto.start()
@@ -118,6 +126,7 @@ func _physics_process(delta):
 			else:
 				Autoload.velocidade = 1
 				ciclos.animation = "normal"
+				
 		elif Autoload.velocidade == 1:
 			Autoload.velocidade += 1
 			ciclos.animation = "fast"
@@ -137,10 +146,7 @@ func _physics_process(delta):
 		energia.animation = "pouco"
 	else:
 		energia.animation = "vazio"
-		ciclos.animation = "normal"
-		Autoload.velocidade = 1
-		panel_2.show()
-		texto.start()
+		Autoload.tempoder.stop()
 		
 
 #-----------------------------------------------------------------
