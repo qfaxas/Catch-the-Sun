@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://assets/Tervore.png" type="Texture" id=1]
 [ext_resource path="res://assets/folha1.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scripts/chage_scene.gd" type="Script" id=17]
 [ext_resource path="res://cenas/fase2(eh_a1).tscn" type="PackedScene" id=18]
 [ext_resource path="res://cenas/sol.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/CAsa.png" type="Texture" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -382,7 +383,7 @@ script = ExtResource( 17 )
 scene = ExtResource( 18 )
 
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 478, -89 )
+position = Vector2( 303, 81 )
 
 [node name="morte" type="Area2D" parent="."]
 
@@ -422,6 +423,15 @@ scale = Vector2( 2.40429, 3 )
 [node name="sol" parent="." instance=ExtResource( 19 )]
 position = Vector2( 2427, -442 )
 scale = Vector2( 0.5, 0.8 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -258.0
+margin_top = -145.0
+margin_right = 254.0
+margin_bottom = 367.0
+rect_rotation = -6.6
+texture = ExtResource( 20 )
+flip_h = true
 
 [connection signal="body_entered" from="pensamento" to="." method="_on_pensamento_body_entered"]
 [connection signal="body_exited" from="pensamento" to="." method="_on_pensamento_body_exited"]
