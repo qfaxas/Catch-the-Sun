@@ -15,6 +15,9 @@ onready var animacao = $AnimatedSprite
 onready var ciclos = $CanvasLayer/MarginContainer/ciclos
 onready var timer = $Timer
 onready var dash_cooldown = $dash_cooldown
+onready var texto = $texto
+onready var panel = $CanvasLayer/MarginContainer/Panel
+onready var tempoder = $tempoder
 
 	
 # Called when the node enters the scene tree for the first time.
@@ -99,10 +102,18 @@ func _physics_process(delta):
 	#gravity
 	if not is_on_floor():
 		velocity.y += gravidade(velocity) * delta
-		
+	
+	move_and_slide(velocity, FLOOR)
+	
 	#ciclar velocidade
 	if Input.is_action_just_pressed("vel"):
-		if Autoload.velocidade == 1:
+		if Autoload.poder == 0:
+			if Autoload.velocidade == 1:
+				panel.show()
+				texto.start()
+				Autoload.velocidade -= 1
+				ciclos.animation = "slow"
+		elif Autoload.velocidade == 1:
 			Autoload.velocidade += 1
 			ciclos.animation = "fast"
 		elif Autoload.velocidade == 2:
@@ -111,9 +122,14 @@ func _physics_process(delta):
 		elif Autoload.velocidade == 0:
 			Autoload.velocidade += 1
 			ciclos.animation = "normal"
+				
 
-	move_and_slide(velocity, FLOOR)
+	#mecanicas de tempo
+	if Autoload.velocidade == 2:
+		tempoder.start()
+		poder -=1
 
+#-----------------------------------------------------------------
 
 func _on_Timer_timeout():
 	speed = 400
@@ -124,3 +140,6 @@ func _on_dash_cooldown_timeout():
 		dashcd = true
 	else:
 		dash_cooldown.start()
+
+func _on_texto_timeout():
+	panel.hide()

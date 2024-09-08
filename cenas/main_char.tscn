@@ -1,8 +1,15 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/main_char.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/Sonne.png" type="Texture" id=2]
 [ext_resource path="res://assets/maco.png" type="Texture" id=3]
+[ext_resource path="res://assets/DeliusSwashCaps-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/broxa.png" type="Texture" id=5]
+[ext_resource path="res://assets/cheio.png" type="Texture" id=6]
+[ext_resource path="res://assets/meiabomba.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=22]
+font_data = ExtResource( 4 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
@@ -32,6 +39,24 @@ animations = [ {
 "loop": true,
 "name": "slow",
 "speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "bom",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "medio",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "pouco",
+"speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=4]
@@ -136,6 +161,22 @@ anchor_right = 1.0
 margin_left = -1024.0
 margin_bottom = 600.0
 
+[node name="Panel" type="Popup" parent="CanvasLayer/MarginContainer"]
+visible = true
+anchor_left = 0.416
+anchor_top = 0.412
+anchor_right = 0.612
+anchor_bottom = 0.421
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Panel"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Não tenho energia pra isso..."
+
 [node name="ciclos" type="AnimatedSprite" parent="CanvasLayer/MarginContainer"]
 position = Vector2( 962, 51 )
 scale = Vector2( 1.5, 1.5 )
@@ -144,6 +185,13 @@ animation = "fast"
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="energia" type="AnimatedSprite" parent="CanvasLayer/MarginContainer"]
+position = Vector2( 790.875, 98 )
+scale = Vector2( 1.78125, 1 )
+frames = SubResource( 23 )
+animation = "bom"
+offset = Vector2( 100, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.19209e-07, 0 )
@@ -172,5 +220,8 @@ __meta__ = {
 [node name="dash_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="texto" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="texto" to="." method="_on_texto_timeout"]
