@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Wood Cracking Sound Effect.mp3-868c7b086706134d899cedba50889996.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Wood Cracking Sound Effect.mp3"
+dest_files=[ "res://.import/Wood Cracking Sound Effect.mp3-868c7b086706134d899cedba50889996.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

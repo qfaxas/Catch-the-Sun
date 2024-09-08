@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="sol" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+color = Color( 1, 0.862745, 0.4, 1 )
+range_height = 306.2
