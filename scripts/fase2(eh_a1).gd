@@ -2,10 +2,11 @@ extends Node2D
 
 onready var tempo_morte = $tempo_morte
 onready var madeira = $ponte/madeira
+onready var notfrieren = $notfrieren
 
 
 func _on_espinhos_body_entered(body):
-	if body.name == "notfrieren" and Autoload.velocidade != 0:
+	if body == notfrieren and Autoload.velocidade != 0:
 		tempo_morte.start()
 
 

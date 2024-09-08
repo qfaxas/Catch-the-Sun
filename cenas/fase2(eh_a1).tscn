@@ -145,7 +145,7 @@ position = Vector2( -102, 512 )
 shape = SubResource( 6 )
 
 [node name="sol" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2309, 90 )
+position = Vector2( 4290, 90 )
 scale = Vector2( 1, 1.5 )
 
 [connection signal="body_entered" from="espinhos" to="." method="_on_espinhos_body_entered"]

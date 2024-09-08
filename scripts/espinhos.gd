@@ -9,7 +9,7 @@ onready var notfrieren = $"../notfrieren"
 
 
 func _on_espinhos_body_entered(body):
-	if body.name == "notfrieren" and Autoload.velocidade != 0:
+	if body == notfrieren and Autoload.velocidade != 0:
 		print("teste")
 		
 		
