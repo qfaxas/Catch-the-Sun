@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PONT.png-72c8e8860370876c9758a30edae2d803.stex"
+path="res://.import/Placas.png-6cdb7ce65230ede0cc5241fadf3e35d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PONT.png"
-dest_files=[ "res://.import/PONT.png-72c8e8860370876c9758a30edae2d803.stex" ]
+source_file="res://assets/Placas.png"
+dest_files=[ "res://.import/Placas.png-6cdb7ce65230ede0cc5241fadf3e35d2.stex" ]
 
 [params]
 

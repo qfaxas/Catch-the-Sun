@@ -151,7 +151,7 @@ func _physics_process(delta):
 		Autoload.tempoder.stop()
 		
 	#teste/apagar dps
-	print("velocidade = ", Autoload.velocidade, "\npoder = ", Autoload.poder)
+	#print("velocidade = ", Autoload.velocidade, "\npoder = ", Autoload.poder)
 	
 
 
