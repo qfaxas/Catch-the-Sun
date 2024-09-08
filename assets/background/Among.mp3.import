@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Among.mp3-1f48898064ca1115c07d5d9a6f2a5fa7.mp3str"
+
+[deps]
+
+source_file="res://assets/background/Among.mp3"
+dest_files=[ "res://.import/Among.mp3-1f48898064ca1115c07d5d9a6f2a5fa7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

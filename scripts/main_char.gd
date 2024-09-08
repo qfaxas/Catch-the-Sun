@@ -8,7 +8,7 @@ const dashy = 4.5
 const FLOOR = Vector2(0,-1)
 var velocity = Vector2.ZERO 
 var speed = 400
-var queda = gravity * 1.7
+var queda = gravity * 2.3
 var jump_buffer = 0.1
 var dashcd :bool = true
 onready var animacao = $AnimatedSprite
@@ -49,6 +49,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
 		if Input.is_action_just_pressed("dash") and dashcd:
+			if Input.is_action_pressed("up"):
+				velocity.y = -450
+			if Input.is_action_pressed("down"):
+				velocity.y = 450
 			speed = 400
 			speed *= dashx
 			timer.start()
@@ -57,6 +61,10 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
 		if Input.is_action_just_pressed("dash") and dashcd:
+			if Input.is_action_pressed("up"):
+				velocity.y = -450
+			if Input.is_action_pressed("down"):
+				velocity.y = 450
 			speed = 400
 			speed *= dashx
 			timer.start()
@@ -65,17 +73,16 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	
-	#testes pra dash 8pad
 	if Input.is_action_pressed("up"):
 			if Input.is_action_just_pressed("dash") and dashcd:
-				velocity.y = -350
+				velocity.y = -450
 				timer.start()
 				dash_cooldown.start()
 				dashcd = false
 
 	if Input.is_action_pressed("down"):
 			if Input.is_action_just_pressed("dash") and dashcd:
-					velocity.y = 350
+					velocity.y = 450
 					timer.start()
 					dash_cooldown.start()
 					dashcd = false
@@ -86,7 +93,7 @@ func _physics_process(delta):
 	jump_buffer -= delta
 	if is_on_floor() and jump_buffer > 0:
 		velocity.y = jump
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	if (Input.is_action_just_released("jump") and velocity.y < 0) or is_on_ceiling():
 		velocity.y = jump / 4
 		
 	#gravity
@@ -113,4 +120,7 @@ func _on_Timer_timeout():
 
 
 func _on_dash_cooldown_timeout():
-	dashcd = true
+	if is_on_floor():
+		dashcd = true
+	else:
+		dash_cooldown.start()

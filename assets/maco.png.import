@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cume.png-c3ad98a136489bd84fb554e6864b4535.stex"
+path="res://.import/maco.png-204a2b075f8d3595f3983130bf3b88a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/cume.png"
-dest_files=[ "res://.import/cume.png-c3ad98a136489bd84fb554e6864b4535.stex" ]
+source_file="res://assets/maco.png"
+dest_files=[ "res://.import/maco.png-204a2b075f8d3595f3983130bf3b88a8.stex" ]
 
 [params]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Among.mp3-7d7df4df7283d3af0b525357afaa7b23.mp3str"
+
+[deps]
+
+source_file="res://Among.mp3"
+dest_files=[ "res://.import/Among.mp3-7d7df4df7283d3af0b525357afaa7b23.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

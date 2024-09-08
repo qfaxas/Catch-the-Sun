@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cume.png-c3ad98a136489bd84fb554e6864b4535.stex"
+path="res://.import/tilenovo.png-8b2b037e6dc53084fd34ae8a3a3d9083.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/cume.png"
-dest_files=[ "res://.import/cume.png-c3ad98a136489bd84fb554e6864b4535.stex" ]
+source_file="res://assets/tilenovo.png"
+dest_files=[ "res://.import/tilenovo.png-8b2b037e6dc53084fd34ae8a3a3d9083.stex" ]
 
 [params]
 

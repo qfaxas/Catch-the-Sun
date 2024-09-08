@@ -45,5 +45,7 @@ shape = SubResource( 1 )
 position = Vector2( 7, 7 )
 frames = SubResource( 6 )
 animation = "pouco"
+frame = 1
+playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_perigo_body_entered"]
