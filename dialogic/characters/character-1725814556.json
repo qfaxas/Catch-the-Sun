@@ -1,0 +1,21 @@
+{
+	"color": "#ff818181",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1725814556.json",
+	"mirror_portraits": false,
+	"name": "Hermes",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
