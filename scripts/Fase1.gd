@@ -24,3 +24,8 @@ func _on_pensamento_body_entered(body):
 func _on_pensamento_body_exited(body):
 	if body.name == "notfrieren":
 		label.hide()
+
+
+func _on_morte_body_entered(body):
+	if body.name == "notfrieren":
+		get_tree().reload_current_scene()
