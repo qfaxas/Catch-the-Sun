@@ -81,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Catch_the_sun"
-run/main_scene="res://cenas/Fase1.tscn"
+run/main_scene="res://cenas/Main_menu.tscn"
 config/icon="res://inutil/icon.png"
 
 [autoload]
