@@ -150,6 +150,10 @@ func _physics_process(delta):
 		energia.animation = "vazio"
 		Autoload.tempoder.stop()
 		
+	#teste/apagar dps
+	print("velocidade = ", Autoload.velocidade, "\npoder = ", Autoload.poder)
+	
+
 
 #-----------------------------------------------------------------
 
