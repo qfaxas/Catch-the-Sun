@@ -8,14 +8,14 @@
 	"name": "Sonna",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": -125,
+	"offset_y": -40,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://assets/char/notfrieren.png"
 		}
 	],
-	"scale": 100,
+	"scale": 30,
 	"theme": ""
 }

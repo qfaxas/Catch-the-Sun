@@ -8,14 +8,14 @@
 	"name": "Hermes",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": 100,
+	"offset_y": -30,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://assets/portrait/Gato-1.png"
 		}
 	],
-	"scale": 100,
+	"scale": 15,
 	"theme": ""
 }
