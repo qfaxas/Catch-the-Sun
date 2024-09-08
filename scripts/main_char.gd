@@ -17,7 +17,8 @@ onready var timer = $Timer
 onready var dash_cooldown = $dash_cooldown
 onready var texto = $texto
 onready var panel = $CanvasLayer/MarginContainer/Panel
-onready var tempoder = $tempoder
+onready var energia = $CanvasLayer/MarginContainer/energia
+
 
 	
 # Called when the node enters the scene tree for the first time.
@@ -122,12 +123,15 @@ func _physics_process(delta):
 		elif Autoload.velocidade == 0:
 			Autoload.velocidade += 1
 			ciclos.animation = "normal"
-				
-
-	#mecanicas de tempo
-	if Autoload.velocidade == 2:
-		tempoder.start()
-		poder -=1
+	print(Autoload.poder)
+	
+	#ver energia
+	if Autoload.poder == 3:
+		energia.animation = "bom"
+	elif Autoload.poder == 2:
+		energia.animation = "medio"
+	elif Autoload.poder == 1:
+		energia.animation = "pouco"
 
 #-----------------------------------------------------------------
 
