@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Spikes.png" type="Texture" id=1]
+[ext_resource path="res://scripts/espinhos.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 66 )
+
+[node name="espinhos" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -46 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4, -21 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
