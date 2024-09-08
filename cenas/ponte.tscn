@@ -34,7 +34,7 @@ frames = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ponta"]
 build_mode = 1
-polygon = PoolVector2Array( 294, -41, 293, -31, 464, -8, 514, -5, 568, -7, 774, -31, 772, -39, 569, -15, 513, -14, 465, -15, 305, -38 )
+polygon = PoolVector2Array( 300, -34, 293, -31, 464, -8, 514, -5, 568, -7, 774, -31, 772, -39, 569, -15, 513, -14, 465, -15, 309, -37 )
 
 [node name="nowood" type="Timer" parent="."]
 
