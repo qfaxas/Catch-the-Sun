@@ -1,1 +1,1 @@
-# GAMEJAM do DUFF, projeto Laufen
+# GAMEJAM do DUFF, projeto Catch the Sun
