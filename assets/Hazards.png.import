@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tervore.png-cf9a8f00b6680978c7a6619455c5ec9e.stex"
+path="res://.import/Hazards.png-ad95d101a06397ad073db3d54bf0593f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tervore.png"
-dest_files=[ "res://.import/Tervore.png-cf9a8f00b6680978c7a6619455c5ec9e.stex" ]
+source_file="res://assets/Hazards.png"
+dest_files=[ "res://.import/Hazards.png-ad95d101a06397ad073db3d54bf0593f.stex" ]
 
 [params]
 
