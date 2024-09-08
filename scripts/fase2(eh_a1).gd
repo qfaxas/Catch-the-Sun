@@ -3,6 +3,10 @@ extends Node2D
 onready var tempo_morte = $tempo_morte
 onready var madeira = $ponte/madeira
 onready var notfrieren = $notfrieren
+onready var popup = $Area2D/Popup
+onready var label = $cara/Label
+
+
 
 
 func _on_espinhos_body_entered(body):
@@ -28,3 +32,24 @@ func _on_tempo_morte_timeout():
 
 func _on_madeira_finished():
 	madeira.stop()
+
+
+func _on_Area2D_body_entered(body):
+	if body == notfrieren:
+		popup.show()
+
+
+
+func _on_Area2D_body_exited(body):
+	if body == notfrieren:
+		popup.hide()
+
+
+func _on_cara_body_entered(body):
+	if body == notfrieren:
+		label.show()
+
+
+func _on_cara_body_exited(body):
+	if body == notfrieren:
+		label.hide()
