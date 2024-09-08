@@ -24,6 +24,8 @@ onready var panel_2 = $CanvasLayer/MarginContainer/Panel2
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Autoload.poder = 3
+	Autoload.velocidade = 1
 	ciclos.animation = "normal"
 	
 func gravidade(velocity: Vector2):
