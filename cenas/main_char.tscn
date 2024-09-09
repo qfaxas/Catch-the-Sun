@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/main_char.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/Sonne.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/cheio.png" type="Texture" id=6]
 [ext_resource path="res://assets/meiabomba.png" type="Texture" id=7]
 [ext_resource path="res://assets/vazio.png" type="Texture" id=8]
+[ext_resource path="res://assets/pass.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/pulo.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=22]
 font_data = ExtResource( 4 )
@@ -218,7 +220,7 @@ position = Vector2( 1.19209e-07, 0 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 1 )
 animation = "andar"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -242,6 +244,15 @@ __meta__ = {
 wait_time = 0.5
 
 [node name="texto" type="Timer" parent="."]
+
+[node name="passo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -3.0
+pitch_scale = 1.2
+
+[node name="pulo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = 13.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]

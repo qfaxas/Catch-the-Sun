@@ -19,6 +19,8 @@ onready var texto = $texto
 onready var panel = $CanvasLayer/MarginContainer/Panel
 onready var energia = $CanvasLayer/MarginContainer/energia
 onready var panel_2 = $CanvasLayer/MarginContainer/Panel2
+onready var passo = $passo
+onready var pulo = $pulo
 
 
 	
@@ -43,9 +45,13 @@ func _physics_process(delta):
 		elif velocity.x > 0:
 			animacao.flip_h = false
 			animacao.animation = "andar"
+			if not passo.is_playing():
+				passo.play()
 		else:
 			animacao.flip_h = true
 			animacao.animation = "andar"
+			if not passo.is_playing():
+				passo.play()
 	elif velocity.y < 0:
 		animacao.animation = "pular"
 	else:
@@ -60,7 +66,7 @@ func _physics_process(delta):
 			panel_2.show()
 			texto.start()
 	
-	#caminhar no elemento
+	#caminhar do elemento
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
 		if Input.is_action_just_pressed("dash") and dashcd:
@@ -107,6 +113,8 @@ func _physics_process(delta):
 	#pulo	
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer = 0.12
+		if not pulo.is_playing():
+				pulo.play()
 	jump_buffer -= delta
 	if is_on_floor() and jump_buffer > 0:
 		velocity.y = jump
