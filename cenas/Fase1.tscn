@@ -383,7 +383,7 @@ script = ExtResource( 17 )
 scene = ExtResource( 18 )
 
 [node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( 303, 81 )
+position = Vector2( 273, 73 )
 
 [node name="morte" type="Area2D" parent="."]
 
@@ -435,6 +435,7 @@ flip_h = true
 
 [connection signal="body_entered" from="pensamento" to="." method="_on_pensamento_body_entered"]
 [connection signal="body_exited" from="pensamento" to="." method="_on_pensamento_body_exited"]
+[connection signal="body_entered" from="final_fase_1" to="." method="_on_final_fase_1_body_entered"]
 [connection signal="body_entered" from="final_fase_1" to="final_fase_1/CollisionShape2D" method="_on_final_fase_1_body_entered"]
 [connection signal="body_entered" from="morte" to="." method="_on_morte_body_entered"]
 [connection signal="body_entered" from="panpanpanpanpanparararan" to="." method="_on_panpanpanpanpanparararan_body_entered"]

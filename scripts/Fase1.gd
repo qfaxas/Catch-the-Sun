@@ -7,6 +7,7 @@ extends Node2D
 onready var label = $pensamento/Label
 onready var amogus = $panpanpanpanpanparararan/amogus
 onready var sus = $panpanpanpanpanparararan/sus
+onready var notfrieren = $notfrieren
 
 
 # Called when the node enters the scene tree for the first time.
@@ -41,3 +42,8 @@ func _on_panpanpanpanpanparararan_body_entered(body):
 
 func _on_sus_timeout():
 	get_tree().reload_current_scene()
+
+
+func _on_final_fase_1_body_entered(body):
+	if body == notfrieren:
+		get_tree().change_scene("res://cenas/creditos.tscn")
