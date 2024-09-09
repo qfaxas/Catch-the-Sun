@@ -45,13 +45,11 @@ func _physics_process(delta):
 		elif velocity.x > 0:
 			animacao.flip_h = false
 			animacao.animation = "andar"
-			if not passo.is_playing():
-				passo.play()
+			
 		else:
 			animacao.flip_h = true
 			animacao.animation = "andar"
-			if not passo.is_playing():
-				passo.play()
+			
 	elif velocity.y < 0:
 		animacao.animation = "pular"
 	else:
@@ -69,6 +67,8 @@ func _physics_process(delta):
 	#caminhar do elemento
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
+		if not passo.is_playing():
+				passo.play()
 		if Input.is_action_just_pressed("dash") and dashcd:
 			if Input.is_action_pressed("up"):
 				velocity.y = -450
@@ -82,6 +82,8 @@ func _physics_process(delta):
 			dashcd = false
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
+		if not passo.is_playing():
+				passo.play()
 		if Input.is_action_just_pressed("dash") and dashcd:
 			if Input.is_action_pressed("up"):
 				velocity.y = -450
