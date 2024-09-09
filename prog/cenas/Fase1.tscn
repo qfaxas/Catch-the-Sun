@@ -433,6 +433,13 @@ rect_rotation = -6.6
 texture = ExtResource( 20 )
 flip_h = true
 
+[node name="Label" type="Label" parent="."]
+margin_left = 2904.0
+margin_top = -357.0
+margin_right = 3197.0
+margin_bottom = -343.0
+text = "Preciso ir rápido para não cair nas armadilhas."
+
 [connection signal="body_entered" from="pensamento" to="." method="_on_pensamento_body_entered"]
 [connection signal="body_exited" from="pensamento" to="." method="_on_pensamento_body_exited"]
 [connection signal="body_entered" from="final_fase_1" to="." method="_on_final_fase_1_body_entered"]

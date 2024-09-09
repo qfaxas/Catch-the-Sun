@@ -11,7 +11,7 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
@@ -24,18 +24,17 @@
 			"character": "character-1725813980.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Parece que eu caí nessa caverna.\nPosso descansar um pouco na luz do Sol se eu me concentrar em ficar mais lenta.\nAcho que vou gastar bastante energia para sair."
+			"text": "Ai!\nCaí nessa caverna.\nPosso descansar um pouco na luz do Sol para recuperar as energias.\nVou precisar de bastante para sair daqui."
 		},
 		{
 			"animation": "[Default]",
 			"animation_length": 0,
-			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
-			"character": "character-1725814556.json",
+			"character": "",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "Default",
+			"portrait": "",
 			"portrait_definition": "",
 			"position": {
 				"0": false,
@@ -50,7 +49,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.5.1",
-		"file": "timeline-1725814773.json",
-		"name": "Diálogo 1"
+		"file": "timeline-1725850128.json",
+		"name": "Dialogo_espinhos"
 	}
 }

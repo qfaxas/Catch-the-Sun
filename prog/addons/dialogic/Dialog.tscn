@@ -10,7 +10,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-timeline = "timeline-1725814773.json"
+timeline = "timeline-1725850128.json"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 131.0

@@ -6,8 +6,6 @@ onready var notfrieren = $notfrieren
 onready var popup = $Area2D/Popup
 onready var label = $cara/Label
 onready var teste = $cara2/teste
-var dialogo = Dialogic.start('Cena_espinho')
-
 
 
 
@@ -39,7 +37,7 @@ func _on_madeira_finished():
 func _on_Area2D_body_entered(body):
 	if body == notfrieren:
 		popup.show()
-		add_child(dialogo)
+		
 
 
 

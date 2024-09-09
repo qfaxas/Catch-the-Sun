@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://cenas/parallex.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilenovo.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://cenas/sol.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/DeliusSwashCaps-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/background/atras.png" type="Texture" id=12]
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 11 )
@@ -136,9 +137,6 @@ mas acho que vou precisar de muita energia para sair daqui"
 [node name="parallex" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1313, 158 )
 
-[node name="notfrieren" parent="." instance=ExtResource( 3 )]
-position = Vector2( -195, 194 )
-
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = SubResource( 5 )
@@ -244,6 +242,9 @@ custom_fonts/font = SubResource( 10 )
 text = "Essa ponte parece caindo aos pedaços, 
                tenho que correr!"
 
+[node name="notfrieren" parent="." instance=ExtResource( 3 )]
+position = Vector2( -186, 205 )
+
 [node name="cara2" type="Area2D" parent="."]
 position = Vector2( 4258, 166 )
 
@@ -269,6 +270,12 @@ margin_bottom = 166.0
 custom_fonts/font = SubResource( 12 )
 text = "Aperte [E]/[X] para mudar sua velocidade,
  e [SHIFT]/[B] para avançar!"
+
+[node name="Dialog" parent="." instance=ExtResource( 13 )]
+margin_left = 132.0
+margin_top = 236.0
+margin_right = 132.0
+margin_bottom = 236.0
 
 [connection signal="body_entered" from="espinhos" to="." method="_on_espinhos_body_entered"]
 [connection signal="body_entered" from="espinhos3" to="." method="_on_espinhos3_body_entered"]
