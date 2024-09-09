@@ -42,6 +42,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if velocity.x == 0:
 			animacao.animation = "idle"
+			passo.stop()
 		elif velocity.x > 0:
 			animacao.flip_h = false
 			animacao.animation = "andar"
