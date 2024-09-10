@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://cenas/parallex.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilenovo.png" type="Texture" id=2]
@@ -96,6 +96,9 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 276.5, 352 )
 
 [node name="fase2(eh_a1)" type="Node2D"]
 script = ExtResource( 7 )
@@ -277,6 +280,13 @@ margin_top = 236.0
 margin_right = 132.0
 margin_bottom = 236.0
 
+[node name="trocafase" type="Area2D" parent="."]
+position = Vector2( 6742, 262 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trocafase"]
+position = Vector2( 239.5, -167 )
+shape = SubResource( 13 )
+
 [connection signal="body_entered" from="espinhos" to="." method="_on_espinhos_body_entered"]
 [connection signal="body_entered" from="espinhos3" to="." method="_on_espinhos3_body_entered"]
 [connection signal="body_entered" from="espinhos2" to="." method="_on_espinhos2_body_entered"]
@@ -290,5 +300,6 @@ margin_bottom = 236.0
 [connection signal="body_exited" from="cara" to="." method="_on_cara_body_exited"]
 [connection signal="body_entered" from="cara2" to="." method="_on_cara_body_entered"]
 [connection signal="body_entered" from="cara2" to="." method="_on_cara2_body_entered"]
-[connection signal="body_exited" from="cara2" to="." method="_on_cara_body_exited"]
 [connection signal="body_exited" from="cara2" to="." method="_on_cara2_body_exited"]
+[connection signal="body_exited" from="cara2" to="." method="_on_cara_body_exited"]
+[connection signal="body_entered" from="trocafase" to="." method="_on_trocafase_body_entered"]

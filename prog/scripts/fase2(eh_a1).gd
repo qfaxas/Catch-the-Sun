@@ -69,3 +69,9 @@ func _on_cara2_body_exited(body):
 func _on_morte_body_entered(body):
 	if body == notfrieren:
 		get_tree().reload_current_scene()
+
+
+func _on_trocafase_body_entered(body):
+	if body == notfrieren:
+		get_tree().change_scene("res://cenas/Fase1.tscn")
+		
